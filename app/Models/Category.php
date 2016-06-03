@@ -9,4 +9,11 @@ class Category extends Model
     protected $table = 'categories';
 
     protected $fillable = ['name'];
+
+    //every category has many articles
+    public function article(){
+
+        $this->hasMany('App\Models\Article','category_id');
+
+    }
 }

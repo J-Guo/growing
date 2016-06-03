@@ -21,5 +21,5 @@ Route::get('main','PagesController@showMainPage');
 Route::get('post-article','PagesController@showPostArticle');
 //create article
 Route::post('post-article','PagesController@createArticle');
-//show all articles based on PHP sub-category
-//Route::get('php/{subcategory}','');
+//show all articles
+Route::get('articles','PagesController@showArticles');

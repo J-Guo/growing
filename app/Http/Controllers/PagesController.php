@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use Illuminate\Http\Request;
-
+use App\Models\Category;
+use App\Http\Requests\PostArticleRequest;
 use App\Http\Requests;
 
 class PagesController extends Controller
@@ -26,13 +28,41 @@ class PagesController extends Controller
      */
     public function showPostArticle(){
 
-        return view('post-article');
+        //get all article categories
+        $categories = Category::all();
+
+        return view('post-article')->with('categories',$categories);
     }
 
 
-    public function createArticle(Request $request){
+    public function createArticle(PostArticleRequest $request){
 
-        dd($request->input());
+        $title  = $request->input('articleName');
+        $category = $request->input('articleCategory');
+        $subcate = $request->input('articleSubCate');
+        $content = $request->input('article-editor');
 
+        $article = new Article();
+        $article->category_id = $category;
+        $article->sub_category = $subcate;
+        $article->title = $title;
+        $article->content = $content;
+
+        //save article
+        $article->save();
+
+        return redirect('articles');
+
+    }
+
+    /**
+     * show all posted articles
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function showArticles(){
+
+        $articles = Article::all();
+
+        return view('articles')->with('articles',$articles);
     }
 }

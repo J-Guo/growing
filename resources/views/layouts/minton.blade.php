@@ -4,11 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
-    <meta name="author" content="Coderthemes">
+    <meta name="author" content="Eric Guo">
 
     <link rel="shortcut icon" href="">
 
-    <title>Minton - Responsive Admin Dashboard Template</title>
+    <title>My Growth</title>
+
+    @yield('page-style')
 
     <link href="{{asset('assets/plugins/sweetalert/dist/sweetalert.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('assets/plugins/switchery/switchery.min.css')}}" rel="stylesheet" />
@@ -30,6 +32,7 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+
 
 
 </head>
@@ -106,7 +109,7 @@
 
                     <li class="text-muted menu-title">More</li>
                     <li>
-                        <a href="index.html" class="waves-effect waves-primary"><i
+                        <a href="{{url('articles')}}" class="waves-effect waves-primary"><i
                                     class="md md-dashboard"></i><span> Articles </span></a>
                     </li>
                     <li>
@@ -214,6 +217,9 @@
 <!-- Custom main Js -->
 <script src="{{asset('assets/js/jquery.core.js')}}"></script>
 <script src="{{asset('assets/js/jquery.app.js')}}"></script>
+
+<!-- Custom JS -->
+@yield('custom-js')
 
 </body>
 </html>

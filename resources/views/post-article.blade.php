@@ -2,7 +2,7 @@
 
 @section('content')
 
-        <!-- Page-Title -->
+<!-- Page-Title -->
 <div class="row">
     <div class="col-sm-12">
         <div class="page-title-box">
@@ -14,6 +14,18 @@
         </div>
     </div>
 </div>
+
+<!-- Show Input Validation Errors Message-->
+@if (count($errors) > 0)
+
+
+    <div class="alert alert-danger alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        @foreach($errors->all() AS $error)
+                {{$error." "}}
+        @endforeach
+    </div>
+@endif
 
 <!-- Page Body -->
 <form class="form-horizontal" action="{{url('post-article')}}" method="POST">
@@ -28,25 +40,29 @@
         <div class="form-group">
             <label for="folderName" class="col-sm-4 control-label">Article Name</label>
             <div class="col-sm-6">
-                <input type="text" id="articleName" name="articleName" class="form-control">
+                <input type="text" id="articleName" name="articleName" class="form-control" value="{{old('articleName')}}">
             </div>
         </div>
         <div class="form-group">
             <label for="folderName" class="col-sm-4 control-label">Category</label>
             <div class="col-sm-6">
                 <select class="form-control" id="articleCategory" name="articleCategory">
-                    <option value="PHP">PHP</option>
-                    <option value="JavaScript">JavaScript</option>
-                    <option value="Laravel">Laravel</option>
-                    <option value="MySQL">MySQL</option>
-                    <option value="Other">Other</option>
+                    <option hidden selected>Please Select a Category</option>
+                    @foreach($categories as $category)
+                        @if($category->id == old('articleCategory'))
+                        <option value="{{$category->id}}" selected>{{$category->name}}</option>
+                        @else
+                        <option value="{{$category->id}}">{{$category->name}}</option>
+                        @endif
+                    @endforeach
                 </select>
             </div>
         </div>
         <div class="form-group">
             <label for="folderName" class="col-sm-4 control-label">Sub Category</label>
             <div class="col-sm-6">
-                <input type="text" id="articleSubCate" name="articleSubCate" class="form-control">
+                <input type="text" id="articleSubCate" name="articleSubCate"
+                       value="{{old('articleSubCate')}}" class="form-control">
             </div>
         </div>
 
@@ -58,7 +74,7 @@
     <div class="col-sm-12">
         <div class="card-box">
 
-                <textarea id="article-editor" name="article-editor"></textarea>
+                <textarea id="article-editor" name="article-editor">{{old('article-editor')}}</textarea>
 
         </div>
     </div>
@@ -85,19 +101,20 @@
                 theme: "modern",
                 height:300,
                 plugins: [
-                    "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
-                    "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
-                    "save table contextmenu directionality emoticons template paste textcolor"
+                    'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+                    'searchreplace wordcount visualblocks visualchars code fullscreen',
+                    'insertdatetime media nonbreaking save table contextmenu directionality',
+                    'emoticons template paste textcolor colorpicker textpattern imagetools'
                 ],
-                toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | l      ink image | print preview media fullpage | forecolor backcolor emoticons",
-                style_formats: [
-                    {title: 'Bold text', inline: 'b'},
-                    {title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
-                    {title: 'Red header', block: 'h1', styles: {color: '#ff0000'}},
-                    {title: 'Example 1', inline: 'span', classes: 'example1'},
-                    {title: 'Example 2', inline: 'span', classes: 'example2'},
-                    {title: 'Table styles'},
-                    {title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
+                toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media | forecolor backcolor emoticons',
+                image_advtab: true,
+                templates: [
+                    { title: 'Test template 1', content: 'Test 1' },
+                    { title: 'Test template 2', content: 'Test 2' }
+                ],
+                content_css: [
+                    '//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
+                    '//www.tinymce.com/css/codepen.min.css'
                 ]
             });
         }
