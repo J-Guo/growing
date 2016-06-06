@@ -113,7 +113,7 @@
                                     class="md md-dashboard"></i><span> Articles </span></a>
                     </li>
                     <li>
-                        <a href="{{url('post-article')}}" class="waves-effect waves-primary"><i
+                        <a href="{{url('articles/create')}}" class="waves-effect waves-primary"><i
                                     class="md md-dashboard"></i><span> Post Article </span></a>
                     </li>
 

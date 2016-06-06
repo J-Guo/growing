@@ -17,8 +17,6 @@
 
 <!-- Show Input Validation Errors Message-->
 @if (count($errors) > 0)
-
-
     <div class="alert alert-danger alert-dismissable">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
         @foreach($errors->all() AS $error)
@@ -28,7 +26,7 @@
 @endif
 
 <!-- Page Body -->
-<form class="form-horizontal" action="{{url('post-article')}}" method="POST">
+<form class="form-horizontal" action="{{url('articles/create')}}" method="POST">
 <div class="card-box">
 
     <p class="text-muted font-13 m-b-30">

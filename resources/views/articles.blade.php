@@ -23,6 +23,14 @@
     </div>
 </div>
 
+<!-- Show Session Message-->
+@if (session()->has('message'))
+    <div class="alert alert-success alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        {{session()->get('message')}}
+    </div>
+@endif
+
 <!-- Page Body -->
 <div class="row">
     <div class="col-sm-12">
@@ -32,21 +40,24 @@
             <table id="articles-datatable" class="table table table-hover m-0">
                 <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                    <th>Age</th>
-                    <th>Start date</th>
-                    <th>Salary</th>
+                    <th>#</th>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Sub Category</th>
+                    <th>Published Date</th>
                 </tr>
                 </thead>
-
-                @foreach($articles as $article)
                 <tbody>
+                @foreach($articles as $article)
+                    <tr>
                     <td>{{$article->id}}</td>
-                    <td>{{$article->tite}}</td>
-                </tbody>
+                    <td>{{$article->title}}</td>
+                    <td>{{$article->category->name}}</td>
+                    <td>{{$article->sub_category}}</td>
+                    <td>{{$article->created_at}}</td>
+                    </tr>
                 @endforeach
+                </tbody>
             </table>
         </div>
     </div>

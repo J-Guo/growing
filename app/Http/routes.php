@@ -18,8 +18,10 @@ Route::get('/', function () {
 //show main page
 Route::get('main','PagesController@showMainPage');
 //show post article page
-Route::get('post-article','PagesController@showPostArticle');
+Route::get('articles/create','PagesController@showPostArticle');
 //create article
-Route::post('post-article','PagesController@createArticle');
+Route::post('articles/create','PagesController@createArticle');
 //show all articles
-Route::get('articles','PagesController@showArticles');
+Route::get('articles','PagesController@showArticlesList');
+//show specific article based on article ID
+Route::get('articles/{id}','PagesController@showArticle');

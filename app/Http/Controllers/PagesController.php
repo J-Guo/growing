@@ -51,7 +51,7 @@ class PagesController extends Controller
         //save article
         $article->save();
 
-        return redirect('articles');
+        return redirect('articles')->with('message','Article has been posted successfully');
 
     }
 
@@ -59,7 +59,7 @@ class PagesController extends Controller
      * show all posted articles
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function showArticles(){
+    public function showArticlesList(){
 
         $articles = Article::all();
 
