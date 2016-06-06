@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Http\Requests\PostArticleRequest;
@@ -64,5 +65,18 @@ class PagesController extends Controller
         $articles = Article::all();
 
         return view('articles')->with('articles',$articles);
+    }
+
+    /**
+     * show specific article based on article id
+     * @param $id
+     * @return View
+     */
+    public function showArticle($id){
+
+        $article = Article::find($id);
+
+
+        return view('article')->with('article',$article);
     }
 }

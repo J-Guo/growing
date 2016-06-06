@@ -51,7 +51,7 @@
                 @foreach($articles as $article)
                     <tr>
                     <td>{{$article->id}}</td>
-                    <td>{{$article->title}}</td>
+                    <td><a href="{{url('articles/'.$article->id)}}">{{$article->title}}</a></td>
                     <td>{{$article->category->name}}</td>
                     <td>{{$article->sub_category}}</td>
                     <td>{{$article->created_at}}</td>

@@ -23,6 +23,8 @@
     <link href="{{asset('assets/css/pages.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('assets/css/menu.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('assets/css/responsive.css')}}" rel="stylesheet" type="text/css">
+    <!-- Devicons -->
+    <link href="{{asset('assets/css/devicon.min.css')}}" rel="stylesheet" type="text/css">
 
     <script src="{{asset('assets/js/modernizr.min.js')}}"></script>
 
@@ -63,7 +65,7 @@
 
 
                         <li class="dropdown">
-                            <a href="" class="dropdown-toggle profile" aria-expanded="false"><img src="assets/images/users/avatar-2.jpg" alt="user-img" class="img-circle"> </a>
+                            <a href="" class="dropdown-toggle profile" aria-expanded="false"><img src="{{asset('assets/images/users/avatar-2.jpg')}}" alt="user-img" class="img-circle"> </a>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle waves-effect" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello,Eric</a>
@@ -103,6 +105,69 @@
                             <li><a href="ui-panels.html">String Functions</a></li>
                             <li><a href="ui-portlets.html">File Functions</a></li>
                             <li><a href="ui-checkbox-radio.html">Date Functions</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has_sub">
+                        <a href="#" class="waves-effect waves-primary"><i class="md md-palette"></i> <span> JavaScript </span>
+                        </a>
+                        <ul class="list-unstyled">
+                            <li><a href="ui-buttons.html">Basics</a></li>
+                            <li><a href="ui-panels.html">String Functions</a></li>
+                            <li><a href="ui-portlets.html">File Functions</a></li>
+                            <li><a href="ui-checkbox-radio.html">Date Functions</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has_sub">
+                        <a href="#" class="waves-effect waves-primary"><i class="md md-palette"></i> <span> MySQL </span>
+                        </a>
+                        <ul class="list-unstyled">
+                            <li><a href="ui-buttons.html">Basics</a></li>
+                            <li><a href="ui-panels.html">String Functions</a></li>
+                            <li><a href="ui-portlets.html">File Functions</a></li>
+                            <li><a href="ui-checkbox-radio.html">Date Functions</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has_sub">
+                        <a href="#" class="waves-effect waves-primary"><i class="devicon-laravel-plain"></i> <span> Laravel </span>
+                        </a>
+                        <ul class="list-unstyled">
+                            <li><a href="ui-buttons.html">Basics</a></li>
+                            <li><a href="ui-panels.html">String Functions</a></li>
+                            <li><a href="ui-portlets.html">File Functions</a></li>
+                            <li><a href="ui-checkbox-radio.html">Date Functions</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has_sub">
+                        <a href="#" class="waves-effect waves-primary"><i class="md md-palette"></i> <span> Web Hosting </span>
+                        </a>
+                        <ul class="list-unstyled">
+                            <li><a href="ui-buttons.html">Basics</a></li>
+                            <li><a href="ui-panels.html">String Functions</a></li>
+                            <li><a href="ui-portlets.html">File Functions</a></li>
+                            <li><a href="ui-checkbox-radio.html">Date Functions</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has_sub">
+                        <a href="#" class="waves-effect waves-primary"><i class="md md-palette"></i> <span> Front End </span>
+                        </a>
+                        <ul class="list-unstyled">
+                            <li><a href="ui-buttons.html">Basics</a></li>
+                            <li><a href="ui-panels.html">String Functions</a></li>
+                            <li><a href="ui-portlets.html">File Functions</a></li>
+                            <li><a href="ui-checkbox-radio.html">Date Functions</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has_sub">
+                        <a href="#" class="waves-effect waves-primary"><i class="md md-palette"></i> <span> Other </span>
+                        </a>
+                        <ul class="list-unstyled">
+                            <li><a href="ui-buttons.html">All</a></li>
                         </ul>
                     </li>
 
