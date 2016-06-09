@@ -17,11 +17,21 @@ Route::get('/', function () {
 
 //show main page
 Route::get('main','PagesController@showMainPage');
+
 //show post article page
 Route::get('articles/create','PagesController@showPostArticle');
 //create article
 Route::post('articles/create','PagesController@createArticle');
+
+//show article edit page based on article ID
+Route::get('articles/edit/{id}','PagesController@showEditArticle');
+//handle article edit action
+Route::post('articles/edit','PagesController@editArticle');
+
 //show all articles
 Route::get('articles','PagesController@showArticlesList');
 //show specific article based on article ID
 Route::get('articles/{id}','PagesController@showArticle');
+//show article list based on category and sub category
+Route::get('articles/{category}/{sub_cate}','PagesController@showArticlesListByCategory');
+

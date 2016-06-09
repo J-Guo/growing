@@ -98,35 +98,35 @@
 
                     <li class="text-muted menu-title">Category</li>
                     <li class="has_sub">
-                        <a href="#" class="waves-effect waves-primary"><i class="md md-palette"></i> <span> PHP </span>
+                        <a href="#" class="waves-effect waves-primary"><i class="devicon-php-plain"></i> <span> PHP </span>
                         </a>
                         <ul class="list-unstyled">
-                            <li><a href="ui-buttons.html">Basics</a></li>
-                            <li><a href="ui-panels.html">String Functions</a></li>
-                            <li><a href="ui-portlets.html">File Functions</a></li>
-                            <li><a href="ui-checkbox-radio.html">Date Functions</a></li>
+                            <li><a href="{{url('articles/php/all')}}">all</a></li>
+                            @foreach($php_subcate as $subcate)
+                            <li><a href="{{url('articles/php/'.$subcate->sub_category)}}">{{$subcate->sub_category}}</a></li>
+                            @endforeach
                         </ul>
                     </li>
 
                     <li class="has_sub">
-                        <a href="#" class="waves-effect waves-primary"><i class="md md-palette"></i> <span> JavaScript </span>
+                        <a href="#" class="waves-effect waves-primary"><i class="devicon-javascript-plain"></i> <span> JavaScript </span>
                         </a>
                         <ul class="list-unstyled">
-                            <li><a href="ui-buttons.html">Basics</a></li>
-                            <li><a href="ui-panels.html">String Functions</a></li>
-                            <li><a href="ui-portlets.html">File Functions</a></li>
-                            <li><a href="ui-checkbox-radio.html">Date Functions</a></li>
+                            <li><a href="{{url('articles/javascript/all')}}">all</a></li>
+                            @foreach($js_subcate as $subcate)
+                                <li><a href="{{url('articles/javascript/'.$subcate->sub_category)}}">{{$subcate->sub_category}}</a></li>
+                            @endforeach
                         </ul>
                     </li>
 
                     <li class="has_sub">
-                        <a href="#" class="waves-effect waves-primary"><i class="md md-palette"></i> <span> MySQL </span>
+                        <a href="#" class="waves-effect waves-primary"><i class="fa  fa-database"></i> <span> Database </span>
                         </a>
                         <ul class="list-unstyled">
-                            <li><a href="ui-buttons.html">Basics</a></li>
-                            <li><a href="ui-panels.html">String Functions</a></li>
-                            <li><a href="ui-portlets.html">File Functions</a></li>
-                            <li><a href="ui-checkbox-radio.html">Date Functions</a></li>
+                            <li><a href="{{url('articles/database/all')}}">all</a></li>
+                            @foreach($db_subcate as $subcate)
+                                <li><a href="{{url('articles/database/'.$subcate->sub_category)}}">{{$subcate->sub_category}}</a></li>
+                            @endforeach
                         </ul>
                     </li>
 
@@ -134,40 +134,43 @@
                         <a href="#" class="waves-effect waves-primary"><i class="devicon-laravel-plain"></i> <span> Laravel </span>
                         </a>
                         <ul class="list-unstyled">
-                            <li><a href="ui-buttons.html">Basics</a></li>
-                            <li><a href="ui-panels.html">String Functions</a></li>
-                            <li><a href="ui-portlets.html">File Functions</a></li>
-                            <li><a href="ui-checkbox-radio.html">Date Functions</a></li>
+                            <li><a href="{{url('articles/laravel/all')}}">All</a></li>
+                            @foreach($laravel_subcate as $subcate)
+                                <li><a href="{{url('articles/laravel/all')}}">{{$subcate->sub_category}}</a></li>
+                            @endforeach
                         </ul>
                     </li>
 
                     <li class="has_sub">
-                        <a href="#" class="waves-effect waves-primary"><i class="md md-palette"></i> <span> Web Hosting </span>
+                        <a href="#" class="waves-effect waves-primary"><i class="fa fa-cloud"></i> <span> Web Hosting </span>
                         </a>
                         <ul class="list-unstyled">
-                            <li><a href="ui-buttons.html">Basics</a></li>
-                            <li><a href="ui-panels.html">String Functions</a></li>
-                            <li><a href="ui-portlets.html">File Functions</a></li>
-                            <li><a href="ui-checkbox-radio.html">Date Functions</a></li>
+                            <li><a href="{{url('articles/web-hosting/all')}}">all</a></li>
+                            @foreach($webhosting_subcate as $subcate)
+                                <li><a href="{{url('articles/web-hosting/'.$subcate->sub_category)}}">{{$subcate->sub_category}}</a></li>
+                            @endforeach
                         </ul>
                     </li>
 
                     <li class="has_sub">
-                        <a href="#" class="waves-effect waves-primary"><i class="md md-palette"></i> <span> Front End </span>
+                        <a href="#" class="waves-effect waves-primary"><i class="fa  fa-html5"></i> <span> Front End </span>
                         </a>
                         <ul class="list-unstyled">
-                            <li><a href="ui-buttons.html">Basics</a></li>
-                            <li><a href="ui-panels.html">String Functions</a></li>
-                            <li><a href="ui-portlets.html">File Functions</a></li>
-                            <li><a href="ui-checkbox-radio.html">Date Functions</a></li>
+                            <li><a href="{{url('articles/front-end/all')}}">all</a></li>
+                            @foreach($frontend_subcate as $subcate)
+                                <li><a href="{{url('articles/front-end/'.$subcate->sub_category)}}">{{$subcate->sub_category}}</a></li>
+                            @endforeach
                         </ul>
                     </li>
 
                     <li class="has_sub">
-                        <a href="#" class="waves-effect waves-primary"><i class="md md-palette"></i> <span> Other </span>
+                        <a href="#" class="waves-effect waves-primary"><i class="fa  fa-code"></i> <span> Other </span>
                         </a>
                         <ul class="list-unstyled">
-                            <li><a href="ui-buttons.html">All</a></li>
+                            <li><a href="{{url('articles/other/all')}}">all</a></li>
+                            @foreach($other_subcate as $subcate)
+                                <li><a href="{{url('articles/other/'.$subcate->sub_category)}}">{{$subcate->sub_category}}</a></li>
+                            @endforeach
                         </ul>
                     </li>
 
@@ -175,11 +178,11 @@
                     <li class="text-muted menu-title">More</li>
                     <li>
                         <a href="{{url('articles')}}" class="waves-effect waves-primary"><i
-                                    class="md md-dashboard"></i><span> Articles </span></a>
+                                    class="fa  fa-file-text-o"></i><span> Articles </span></a>
                     </li>
                     <li>
                         <a href="{{url('articles/create')}}" class="waves-effect waves-primary"><i
-                                    class="md md-dashboard"></i><span> Post Article </span></a>
+                                    class="fa  fa-edit"></i><span> Post Article </span></a>
                     </li>
 
                 </ul>
